@@ -15,7 +15,7 @@ namespace Differ
 {
 	internal static class Program
 	{
-		private static string _format = "xml";
+		private static string _format = "markdown+";
 		private static bool _help;
 		private static OutputWriterFactory _output = new OutputWriterFactory(null);
 		private static SuggestedVersionChange _preventChange = SuggestedVersionChange.None;
@@ -36,6 +36,7 @@ namespace Differ
 			var exporters = new ExporterCollection(
 				new XmlExporter(),
 				new MarkdownExporter(),
+				new MarkdownExporterPlus(),
 				new AsciiDocExporter(),
 				new GitHubActionCommentExporter()
 			);
