@@ -34,7 +34,7 @@ namespace Differ.Exporters {
 			if (typeName == "XLua.DelegateBridge") return;
 
 			if (typeName.Contains('.') && inherit.Depth == 0)
-				typeName = Regex.Replace(typeName, @"(^\S+)\.([a-zA-Z]+$)", "$1.**$2**");
+				typeName = Regex.Replace(typeName, @"(^\S+)\.([^\.]+$)", "$1.**$2**");
 			else
 				typeName = $"**{typeName}**";
 
